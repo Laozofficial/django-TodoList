@@ -1,0 +1,44 @@
+{% extends "todo/layout.html" %}
+
+{% block content %}
+    <h3>Edit Your Todo List</h3>
+    <form action="/todo/update/{{ todo.id }}" method="post">
+    {% csrf_token %}
+          <div class="row">
+            <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    {% comment %} <i class="material-icons prefix">Title</i> {% endcomment %}
+                    <input name="todo_title" type="text" id="autocomplete-input" class="autocomplete" value="{{ todo.title }}">
+                    <label for="autocomplete-input">Title</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% comment %} todo description {% endcomment %}
+         <div class="row">
+            <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    {% comment %} <i class="material-icons prefix">Title</i> {% endcomment %}
+                    <input name="todo_description" type="text" id="autocomplete-input" class="autocomplete" value="{{ todo.desciption }}">
+                    <label for="autocomplete-input">Description</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% comment %} Posted By {% endcomment %}
+         <div class="row">
+            <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    {% comment %} <i class="material-icons prefix">Title</i> {% endcomment %}
+                    <input name="your_name" type="text" id="autocomplete-input" class="autocomplete" value="{{ todo.posted_by }}">
+                    <label for="autocomplete-input">Your Name</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn red darken-3" type="submit">Update <i class="material-icons right">send</i></button>
+    </form>
+{% endblock  %}

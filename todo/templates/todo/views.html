@@ -1,0 +1,17 @@
+{% extends "todo/layout.html" %}
+
+{% block content %}
+    <div class="card">
+    <h3 class="center-align">{{ todo.title }}</h3>
+        <div class="card-content">
+            {{ todo.desciption }}<br><br>
+            <p class="blue-text"><span class="black-text">uploaded by</span> {{ todo.posted_by }}</p>
+        </div>
+        <div class="card-action">
+         <a href="/todo/edit_todo/{{ todo.id }}" class="secondary-content"><i class="material-icons blue-text">edit</i></a>
+            {{ todo.created_at }}
+             <a href="/todo/delete/{{ todo.id }}" class="secondary-content"><i class="material-icons red-text">delete</i></a>
+        </div>
+         
+    </div>
+{% endblock  %}

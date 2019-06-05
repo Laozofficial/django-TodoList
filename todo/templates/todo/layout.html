@@ -1,0 +1,36 @@
+
+
+     <!DOCTYPE html>
+     {% load static %}
+        <html>
+                <head>
+                <title>Django Todo List</title>
+                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <!-- Compiled and minified CSS -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                </head>
+            <body>
+                <section class="center-align">
+                    <div class="card-panel teal lighten-2">
+                    {% comment %} <img src="{% static 'images/django.png' %}"> {% endcomment %}
+                        <h1 class="white-text">Django Todo Application</h1><br>
+                         <a href="/" class="btn red">Home</a>
+                         <a href="/admin" class="btn red">Admin Area</a>
+                         <a href="todo/add" class="btn red">Add Todo List</a>
+                    </div>
+                
+                </section>
+                    <div class="container center-align">
+                    {% block content %}
+                    
+
+
+                    {% endblock %}
+                    
+                    </div>
+
+                
+                <!-- Compiled and minified JavaScript -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            </body>
+        </html> 
